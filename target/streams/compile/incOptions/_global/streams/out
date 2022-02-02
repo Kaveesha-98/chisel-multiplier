@@ -2,8 +2,8 @@
 [0m[[0m[0mdebug[0m] [0m[0mAbout to delete class files:[0m
 [0m[[0m[0mdebug[0m] [0m[0mWe backup class files:[0m
 [0m[[0m[0mdebug[0m] [0m[0mRegistering generated classes:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	csa_3_input_n_bit.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	csa_3_input_n_bit$$anon$1.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	csa_3_input_n_bit$delayedInit$body.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	csa_3_input_n_bit$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	csa_recursive_adder_4_input$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	csa_recursive_adder_4_input$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	csa_recursive_adder_4_input.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	csa_recursive_adder_4_input$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: /mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/target/scala-2.12/classes.bak[0m
