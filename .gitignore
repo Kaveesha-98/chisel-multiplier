@@ -1,3 +1,7 @@
 *.v
 *.json
 *.fir
+/project
+/target
+/obj_dir
+/test_benches/executables
