@@ -36,7 +36,7 @@ class csa_recursive_adder_4_input(width: Int) extends Module {
     val csa_adder_2_Sout = csa_adder_2.io.Sout
     val csa_adder_2_Cout = csa_adder_2.io.Cout
     
-	io.Sout := Cat(P_3(width-1), Cat(csa_adder_2_Sout, csa_adder_1_Sout(1, 0)))
+	io.Sout := Cat(P_3(width-1), Cat(csa_adder_2_Sout, Cat(csa_adder_1_Sout(0), P_0(0))))
     io.Cout := Cat(csa_adder_2_Cout, 0.U(3.W))
 }
 
