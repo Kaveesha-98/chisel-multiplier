@@ -1,2 +1,26 @@
-[0m[[0m[33mwarn[0m] [0m[0mthere were 16 feature warnings; re-run with -feature for details[0m
-[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/78B2CB0FB2CAD0B4/GitHub/chisel-multiplier/src/main/scala/multiplier.scala:24:36: inferred type arguments [Int] do not conform to method apply's type parameter bounds [T <: chisel3.Data][0m
+[0m[[0m[31merror[0m] [0m[0m    var stage1_adder_1_Sout = Wire(Vec(width, width/4))[0m
+[0m[[0m[31merror[0m] [0m[0m                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/78B2CB0FB2CAD0B4/GitHub/chisel-multiplier/src/main/scala/multiplier.scala:24:52: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Int[0m
+[0m[[0m[31merror[0m] [0m[0m required: T[0m
+[0m[[0m[31merror[0m] [0m[0m    var stage1_adder_1_Sout = Wire(Vec(width, width/4))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/78B2CB0FB2CAD0B4/GitHub/chisel-multiplier/src/main/scala/multiplier.scala:25:36: inferred type arguments [Int] do not conform to method apply's type parameter bounds [T <: chisel3.Data][0m
+[0m[[0m[31merror[0m] [0m[0m    var stage1_adder_1_Cout = Wire(Vec(width, width/4))[0m
+[0m[[0m[31merror[0m] [0m[0m                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/78B2CB0FB2CAD0B4/GitHub/chisel-multiplier/src/main/scala/multiplier.scala:25:52: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Int[0m
+[0m[[0m[31merror[0m] [0m[0m required: T[0m
+[0m[[0m[31merror[0m] [0m[0m    var stage1_adder_1_Cout = Wire(Vec(width, width/4))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/78B2CB0FB2CAD0B4/GitHub/chisel-multiplier/src/main/scala/multiplier.scala:35:6: value update is not a member of chisel3.Vec[T][0m
+[0m[[0m[31merror[0m] [0m[0m    	stage1_adder_1_Sout(i) = stage1_adders_1(i).io.Sout[0m
+[0m[[0m[31merror[0m] [0m[0m    	^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/78B2CB0FB2CAD0B4/GitHub/chisel-multiplier/src/main/scala/multiplier.scala:36:6: value update is not a member of chisel3.Vec[T][0m
+[0m[[0m[31merror[0m] [0m[0m    	stage1_adder_1_Cout(i) = stage1_adders_1(i).io.Cout[0m
+[0m[[0m[31merror[0m] [0m[0m    	^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/78B2CB0FB2CAD0B4/GitHub/chisel-multiplier/src/main/scala/multiplier.scala:40:80: T does not take parameters[0m
+[0m[[0m[31merror[0m] [0m[0m    	stage1_adders_2(i).io.A := Cat(P(4*i + 2)(width-1), stage1_adder_1_Sout(i)(width-1, 1))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                                                                          ^[0m
+[0m[[0m[31merror[0m] [0m[0m7 errors found[0m
