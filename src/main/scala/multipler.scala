@@ -1,0 +1,76 @@
+import chisel3._
+import chisel3.util._
+import chisel3.Driver
+
+class multiplier extends Module {
+    val io = IO(new Bundle{
+    	//inputs
+    	val multiplier = Input(UInt(32.W))
+    	val multiplicand = Input(UInt(32.W))
+    	//outputs
+    	val Sout = Output(UInt(32.W))
+    	val Cout = Output(UInt(32.W))
+    })
+    
+    val partial_products = Wire(Vec(32, UInt(32.W)))
+
+	//creating partial products
+	for(i <- 0 to 31){
+		partial_products(i) := Mux(io.multiplier(i) === 1.U, io.multiplicand, 0.U)
+	}
+    
+    //adders for 1st stage
+    var stage1_adders_set1 = new Array[csa_3_input_n_bit](8)
+    var stage1_adders_set2 = new Array[csa_3_input_n_bit](8)
+    
+    //output of stage1_adders_set1
+    val stage1_adders_set1_Sout = Wire(Vec(8, UInt(32.W)))
+    val stage1_adders_set1_Cout = Wire (Vec(8, UInt(32.W)))
+    
+    //output of stage1_adders_set2
+    val stage1_adders_set2_Sout = Wire(Vec(8, UInt(32.W)))
+    val stage1_adders_set2_Cout = Wire (Vec(8, UInt(32.W)))
+    
+    //output of stage1_adders
+    val stage1_adders_Sout = Wire(Vec(8, UInt(35.W)))
+    val stage1_adders_Cout = Wire (Vec(8, UInt(32.W)))
+    
+    for(i <- 0 to 7){
+    	stage1_adders_set1(i) = Module(new csa_3_input_n_bit(32))
+    	
+    	stage1_adders_set1(i).io.A := Cat(0.U(1.W), partial_products(4*i + 0)(31, 1))
+    	stage1_adders_set1(i).io.B := partial_products(4*i + 1)
+    	stage1_adders_set1(i).io.Cin := Cat(partial_products(4*i + 2)(30, 0), 0.U(1.W))
+    	
+    	stage1_adders_set1_Sout(i) := stage1_adders_set1(i).io.Sout
+    	stage1_adders_set1_Cout(i) := stage1_adders_set1(i).io.Cout
+    	
+    	stage1_adders_set2(i) = Module(new csa_3_input_n_bit(32))
+    	
+    	stage1_adders_set2(i).io.A := Cat(partial_products(4*i + 2)(31), stage1_adders_set1_Sout(i)(31, 1))
+    	stage1_adders_set2(i).io.B := stage1_adders_set1_Cout(i)
+    	stage1_adders_set2(i).io.Cin := Cat(partial_products(4*i + 3)(30, 0), 0.U(1.W))
+    	
+    	stage1_adders_set2_Sout(i) := stage1_adders_set2(i).io.Sout
+    	stage1_adders_set2_Cout(i) := stage1_adders_set2(i).io.Cout
+    	
+    	stage1_adders_Sout(i) := Cat(Cat(partial_products(4*i + 3)(31), stage1_adders_set2_Sout(i)), Cat(stage1_adders_set1_Sout(i)(0), partial_products(4*i + 0)(0)))
+    	stage1_adders_Cout(i) := stage1_adders_set2_Cout(i)
+    }
+    
+    //adders for 2nd stage
+    var stage2_adders_set1 = new Array[csa_3_input_n_bit](4)
+    var stage2_adders_set2 = new Array[csa_3_input_n_bit](4)
+    
+    //ouput of stage2_adders_set1
+    val stage2_adders_set2_Sout = Wire(Vec(4, UInt(32.W)))
+    val stage2_adders_set2_Cout = Wire(Vec(4, UInt(32.W)))
+    
+    
+	io.Sout := 1.U
+    io.Cout := 1.U
+}
+
+object multiplier extends App{
+    (new chisel3.stage.ChiselStage).emitVerilog(new multiplier())
+}

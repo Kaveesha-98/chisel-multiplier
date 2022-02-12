@@ -1,0 +1,301 @@
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_32_bit.scala:1:8: not found: object chisel3[0m
+[0m[[0m[31merror[0m] [0m[0mimport chisel3._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_32_bit.scala:2:8: not found: object chisel3[0m
+[0m[[0m[31merror[0m] [0m[0mimport chisel3.util._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_32_bit.scala:3:8: not found: object chisel3[0m
+[0m[[0m[31merror[0m] [0m[0mimport chisel3.Driver[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_32_bit.scala:5:34: illegal inheritance from final class Module[0m
+[0m[[0m[31merror[0m] [0m[0mclass csa_3_input_32_bit extends Module {[0m
+[0m[[0m[31merror[0m] [0m[0m                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_32_bit.scala:6:14: not found: value IO[0m
+[0m[[0m[31merror[0m] [0m[0m    val io = IO(new Bundle{[0m
+[0m[[0m[31merror[0m] [0m[0m             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_32_bit.scala:6:21: not found: type Bundle[0m
+[0m[[0m[31merror[0m] [0m[0m    val io = IO(new Bundle{[0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_32_bit.scala:8:14: not found: value Input[0m
+[0m[[0m[31merror[0m] [0m[0m    	val A = Input(UInt(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_32_bit.scala:8:20: not found: value UInt[0m
+[0m[[0m[31merror[0m] [0m[0m    	val A = Input(UInt(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_32_bit.scala:8:28: value W is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m    	val A = Input(UInt(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_32_bit.scala:9:14: not found: value Input[0m
+[0m[[0m[31merror[0m] [0m[0m    	val B = Input(UInt(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_32_bit.scala:9:20: not found: value UInt[0m
+[0m[[0m[31merror[0m] [0m[0m    	val B = Input(UInt(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_32_bit.scala:9:28: value W is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m    	val B = Input(UInt(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_32_bit.scala:10:16: not found: value Input[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Cin = Input(UInt(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_32_bit.scala:10:22: not found: value UInt[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Cin = Input(UInt(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_32_bit.scala:10:30: value W is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Cin = Input(UInt(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_32_bit.scala:12:17: not found: value Output[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Sout = Output(UInt(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_32_bit.scala:12:24: not found: value UInt[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Sout = Output(UInt(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_32_bit.scala:12:32: value W is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Sout = Output(UInt(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_32_bit.scala:13:17: not found: value Output[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Cout = Output(UInt(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_32_bit.scala:13:24: not found: value UInt[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Cout = Output(UInt(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_32_bit.scala:13:32: value W is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Cout = Output(UInt(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_32_bit.scala:25:10: not found: value chisel3[0m
+[0m[[0m[31merror[0m] [0m[0m    (new chisel3.stage.ChiselStage).emitVerilog(new csa_3_input_32_bit())[0m
+[0m[[0m[31merror[0m] [0m[0m         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_n_bit.scala:1:8: not found: object chisel3[0m
+[0m[[0m[31merror[0m] [0m[0mimport chisel3._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_n_bit.scala:2:8: not found: object chisel3[0m
+[0m[[0m[31merror[0m] [0m[0mimport chisel3.util._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_n_bit.scala:3:8: not found: object chisel3[0m
+[0m[[0m[31merror[0m] [0m[0mimport chisel3.Driver[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_n_bit.scala:5:45: illegal inheritance from final class Module[0m
+[0m[[0m[31merror[0m] [0m[0mclass csa_3_input_n_bit(width: Int) extends Module {[0m
+[0m[[0m[31merror[0m] [0m[0m                                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_n_bit.scala:6:14: not found: value IO[0m
+[0m[[0m[31merror[0m] [0m[0m    val io = IO(new Bundle{[0m
+[0m[[0m[31merror[0m] [0m[0m             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_n_bit.scala:6:21: not found: type Bundle[0m
+[0m[[0m[31merror[0m] [0m[0m    val io = IO(new Bundle{[0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_n_bit.scala:8:14: not found: value Input[0m
+[0m[[0m[31merror[0m] [0m[0m    	val A = Input(UInt(width.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_n_bit.scala:8:20: not found: value UInt[0m
+[0m[[0m[31merror[0m] [0m[0m    	val A = Input(UInt(width.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_n_bit.scala:8:31: value W is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m    	val A = Input(UInt(width.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_n_bit.scala:9:14: not found: value Input[0m
+[0m[[0m[31merror[0m] [0m[0m    	val B = Input(UInt(width.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_n_bit.scala:9:20: not found: value UInt[0m
+[0m[[0m[31merror[0m] [0m[0m    	val B = Input(UInt(width.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_n_bit.scala:9:31: value W is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m    	val B = Input(UInt(width.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_n_bit.scala:10:16: not found: value Input[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Cin = Input(UInt(width.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_n_bit.scala:10:22: not found: value UInt[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Cin = Input(UInt(width.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_n_bit.scala:10:33: value W is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Cin = Input(UInt(width.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_n_bit.scala:12:17: not found: value Output[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Sout = Output(UInt(width.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_n_bit.scala:12:24: not found: value UInt[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Sout = Output(UInt(width.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_n_bit.scala:12:35: value W is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Sout = Output(UInt(width.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_n_bit.scala:13:17: not found: value Output[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Cout = Output(UInt(width.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_n_bit.scala:13:24: not found: value UInt[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Cout = Output(UInt(width.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_n_bit.scala:13:35: value W is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Cout = Output(UInt(width.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_3_input_n_bit.scala:25:10: not found: value chisel3[0m
+[0m[[0m[31merror[0m] [0m[0m    (new chisel3.stage.ChiselStage).emitVerilog(new csa_3_input_n_bit(32))[0m
+[0m[[0m[31merror[0m] [0m[0m         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_recursive_adder_4_input.scala:1:8: not found: object chisel3[0m
+[0m[[0m[31merror[0m] [0m[0mimport chisel3._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_recursive_adder_4_input.scala:2:8: not found: object chisel3[0m
+[0m[[0m[31merror[0m] [0m[0mimport chisel3.util._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_recursive_adder_4_input.scala:3:8: not found: object chisel3[0m
+[0m[[0m[31merror[0m] [0m[0mimport chisel3.Driver[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_recursive_adder_4_input.scala:5:55: illegal inheritance from final class Module[0m
+[0m[[0m[31merror[0m] [0m[0mclass csa_recursive_adder_4_input(width: Int) extends Module {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_recursive_adder_4_input.scala:6:14: not found: value IO[0m
+[0m[[0m[31merror[0m] [0m[0m    val io = IO(new Bundle{[0m
+[0m[[0m[31merror[0m] [0m[0m             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_recursive_adder_4_input.scala:6:21: not found: type Bundle[0m
+[0m[[0m[31merror[0m] [0m[0m    val io = IO(new Bundle{[0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_recursive_adder_4_input.scala:8:16: not found: value Input[0m
+[0m[[0m[31merror[0m] [0m[0m    	val P_0 = Input(UInt(width.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_recursive_adder_4_input.scala:8:22: not found: value UInt[0m
+[0m[[0m[31merror[0m] [0m[0m    	val P_0 = Input(UInt(width.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_recursive_adder_4_input.scala:8:33: value W is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m    	val P_0 = Input(UInt(width.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_recursive_adder_4_input.scala:9:16: not found: value Input[0m
+[0m[[0m[31merror[0m] [0m[0m    	val P_1 = Input(UInt(width.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_recursive_adder_4_input.scala:9:22: not found: value UInt[0m
+[0m[[0m[31merror[0m] [0m[0m    	val P_1 = Input(UInt(width.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_recursive_adder_4_input.scala:9:33: value W is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m    	val P_1 = Input(UInt(width.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_recursive_adder_4_input.scala:10:16: not found: value Input[0m
+[0m[[0m[31merror[0m] [0m[0m    	val P_2 = Input(UInt(width.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_recursive_adder_4_input.scala:10:22: not found: value UInt[0m
+[0m[[0m[31merror[0m] [0m[0m    	val P_2 = Input(UInt(width.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_recursive_adder_4_input.scala:10:33: value W is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m    	val P_2 = Input(UInt(width.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_recursive_adder_4_input.scala:11:16: not found: value Input[0m
+[0m[[0m[31merror[0m] [0m[0m    	val P_3 = Input(UInt(width.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_recursive_adder_4_input.scala:11:22: not found: value UInt[0m
+[0m[[0m[31merror[0m] [0m[0m    	val P_3 = Input(UInt(width.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_recursive_adder_4_input.scala:11:33: value W is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m    	val P_3 = Input(UInt(width.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_recursive_adder_4_input.scala:13:17: not found: value Output[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Sout = Output(UInt((width+3).W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_recursive_adder_4_input.scala:13:24: not found: value UInt[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Sout = Output(UInt((width+3).W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_recursive_adder_4_input.scala:13:39: value W is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Sout = Output(UInt((width+3).W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_recursive_adder_4_input.scala:14:17: not found: value Output[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Cout = Output(UInt((width+3).W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_recursive_adder_4_input.scala:14:24: not found: value UInt[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Cout = Output(UInt((width+3).W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_recursive_adder_4_input.scala:14:39: value W is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Cout = Output(UInt((width+3).W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_recursive_adder_4_input.scala:22:23: class java.lang.Module is not a value[0m
+[0m[[0m[31merror[0m] [0m[0m    val csa_adder_1 = Module(new csa_3_input_n_bit(width))[0m
+[0m[[0m[31merror[0m] [0m[0m                      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_recursive_adder_4_input.scala:23:23: class java.lang.Module is not a value[0m
+[0m[[0m[31merror[0m] [0m[0m    val csa_adder_2 = Module(new csa_3_input_n_bit(width))[0m
+[0m[[0m[31merror[0m] [0m[0m                      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/csa_recursive_adder_4_input.scala:44:10: not found: value chisel3[0m
+[0m[[0m[31merror[0m] [0m[0m    (new chisel3.stage.ChiselStage).emitVerilog(new csa_recursive_adder_4_input(32))[0m
+[0m[[0m[31merror[0m] [0m[0m         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/full_adder.scala:1:8: not found: object chisel3[0m
+[0m[[0m[31merror[0m] [0m[0mimport chisel3._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/full_adder.scala:2:8: not found: object chisel3[0m
+[0m[[0m[31merror[0m] [0m[0mimport chisel3.util._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/full_adder.scala:3:8: not found: object chisel3[0m
+[0m[[0m[31merror[0m] [0m[0mimport chisel3.Driver[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/full_adder.scala:5:26: illegal inheritance from final class Module[0m
+[0m[[0m[31merror[0m] [0m[0mclass full_adder extends Module {[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/full_adder.scala:6:14: not found: value IO[0m
+[0m[[0m[31merror[0m] [0m[0m    val io = IO(new Bundle{[0m
+[0m[[0m[31merror[0m] [0m[0m             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/full_adder.scala:6:21: not found: type Bundle[0m
+[0m[[0m[31merror[0m] [0m[0m    val io = IO(new Bundle{[0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/full_adder.scala:8:14: not found: value Input[0m
+[0m[[0m[31merror[0m] [0m[0m    	val A = Input(UInt(1.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/full_adder.scala:8:20: not found: value UInt[0m
+[0m[[0m[31merror[0m] [0m[0m    	val A = Input(UInt(1.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/full_adder.scala:8:27: value W is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m    	val A = Input(UInt(1.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/full_adder.scala:9:14: not found: value Input[0m
+[0m[[0m[31merror[0m] [0m[0m    	val B = Input(UInt(1.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/full_adder.scala:9:20: not found: value UInt[0m
+[0m[[0m[31merror[0m] [0m[0m    	val B = Input(UInt(1.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/full_adder.scala:9:27: value W is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m    	val B = Input(UInt(1.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/full_adder.scala:10:16: not found: value Input[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Cin = Input(UInt(1.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/full_adder.scala:10:22: not found: value UInt[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Cin = Input(UInt(1.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/full_adder.scala:10:29: value W is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Cin = Input(UInt(1.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/full_adder.scala:12:17: not found: value Output[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Sout = Output(UInt(1.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/full_adder.scala:12:24: not found: value UInt[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Sout = Output(UInt(1.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/full_adder.scala:12:31: value W is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Sout = Output(UInt(1.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/full_adder.scala:13:17: not found: value Output[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Cout = Output(UInt(1.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/full_adder.scala:13:24: not found: value UInt[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Cout = Output(UInt(1.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/full_adder.scala:13:31: value W is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m    	val Cout = Output(UInt(1.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/full_adder.scala:20:10: not found: value chisel3[0m
+[0m[[0m[31merror[0m] [0m[0m    (new chisel3.stage.ChiselStage).emitVerilog(new full_adder())[0m
+[0m[[0m[31merror[0m] [0m[0m         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/multipler.scala:1:8: not found: object chisel3[0m
+[0m[[0m[31merror[0m] [0m[0mimport chisel3._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/multipler.scala:2:8: not found: object chisel3[0m
+[0m[[0m[31merror[0m] [0m[0mimport chisel3.util._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/multipler.scala:3:8: not found: object chisel3[0m
+[0m[[0m[31merror[0m] [0m[0mimport chisel3.Driver[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/multipler.scala:5:26: illegal inheritance from final class Module[0m
+[0m[[0m[31merror[0m] [0m[0mclass multiplier extends Module {[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/multipler.scala:6:14: not found: value IO[0m
+[0m[[0m[31merror[0m] [0m[0m    val io = IO(new Bundle{[0m
+[0m[[0m[31merror[0m] [0m[0m             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/multipler.scala:6:21: not found: type Bundle[0m
+[0m[[0m[31merror[0m] [0m[0m    val io = IO(new Bundle{[0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/src/main/scala/multipler.scala:8:23: not found: value Input[0m
+[0m[[0m[31merror[0m] [0m[0m    	val multiplier = Input(UInt(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m    	                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m100 errors found[0m
