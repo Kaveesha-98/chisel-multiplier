@@ -21,9 +21,15 @@ class multiplier(width: Int) extends Module {
     var stage1_adders_1 = new Array[csa_3_input_n_bit](width/4)
     var stage1_adders_2 = new Array[csa_3_input_n_bit](width/4)
     
-    var stage1_adder_1_Sout = Wire(Vec(width, width/4))
-    var stage1_adder_1_Cout = Wire(Vec(width, width/4))
+    val stage1_adder_1_Sout = Wire(Vec(width/4, UInt(width.W)))
+    val stage1_adder_1_Cout = Wire(Vec(width/4, UInt(width.W)))
     
+    val stage1_adder_2_Sout = Wire(Vec(width/4, UInt(width.W)))
+    val stage1_adder_2_Cout = Wire(Vec(width/4, UInt(width.W)))
+    /*
+    var stage1_adder_Sout = Wire(Vec(width, width/4))
+    var stage1_adder_Cout = Wire(Vec(width, width/4))
+    */
     //declearing stage 1 adders
     for (i <- 0 to (width/4 -1)) {
 		stage1_adders_1(i) = Module(new csa_3_input_n_bit(width))
@@ -32,14 +38,20 @@ class multiplier(width: Int) extends Module {
     	stage1_adders_1(i).io.B := P(4*i + 1)
     	stage1_adders_1(i).io.Cin := Cat(P(4*i + 2)(width-2, 0), 0.U(1.W))
     	
-    	stage1_adder_1_Sout(i) = stage1_adders_1(i).io.Sout
-    	stage1_adder_1_Cout(i) = stage1_adders_1(i).io.Cout
+    	stage1_adder_1_Sout(i) := stage1_adders_1(i).io.Sout
+    	stage1_adder_1_Cout(i) := stage1_adders_1(i).io.Cout
     	
     	stage1_adders_2(i) = Module(new csa_3_input_n_bit(width))
     	
     	stage1_adders_2(i).io.A := Cat(P(4*i + 2)(width-1), stage1_adder_1_Sout(i)(width-1, 1))
     	stage1_adders_2(i).io.B := stage1_adder_1_Cout(i)
     	stage1_adders_2(i).io.Cin := Cat(P(4*i + 3)(width-2, 0), 0.U(1.W))
+    	
+    	stage1_adder_2_Sout(i) := stage1_adders_2(i).io.Sout
+    	stage1_adder_2_Cout(i) := stage1_adders_2(i).io.Cout
+    	/*
+    	stage1_adder_Sout(i) = Cat(P(4*i + 3)(width-1), Cat(stage1_adder_2_Sout(i), Cat(stage1_adder_1_Sout(i)(0), P(4*i + 0)(0))))
+    	stage1_adder_Cout(i) = Cat(stage1_adder_2_Cout(i), 0.U(3.W))*/
 	}
     
 	io.result := Cat(P(1), P(0))
