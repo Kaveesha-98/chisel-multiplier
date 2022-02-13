@@ -1,4 +1,4 @@
-[0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = /mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/target/scala-2.12/classes.bak[0m
+[0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = /mnt/78B2CB0FB2CAD0B4/GitHub/chisel-multiplier/target/scala-2.12/classes.bak[0m
 [0m[[0m[0mdebug[0m] [0m[0mAbout to delete class files:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	multiplier.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	multiplier$.class[0m
@@ -10,16 +10,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	multiplier$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	multiplier$$anon$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mRegistering generated classes:[0m
-<<<<<<< HEAD
-[0m[[0m[0mdebug[0m] [0m[0m	multiplier$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	multiplier.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	multiplier$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	multiplier$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	multiplier$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: /mnt/78B2CB0FB2CAD0B4/GitHub/chisel-multiplier/target/scala-2.12/classes.bak[0m
-=======
-[0m[[0m[0mdebug[0m] [0m[0m	multiplier.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	multiplier$$anon$1.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	multiplier$delayedInit$body.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	multiplier$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: /mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/target/scala-2.12/classes.bak[0m
->>>>>>> 579e3c513bf98685646370af9c55d83778371954
