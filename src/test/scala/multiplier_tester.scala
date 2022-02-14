@@ -38,7 +38,10 @@ class multiplier_tester(dut: multiplier) extends
 	var input1:Int = 4294967295L
 	var input2:Int = 4294967295L
 	
-	for (i <- 4294967290L to 4294967295L){
+	var i:Int = 0
+	
+	while (i <= 4294L){
+	
 		inputs = nextInputs(i)
 		input1 = (("b" + inputs.substring(0, 31)).U).toInt
 		input2 = (("b" + inputs.substring(32, 63)).U).toInt
@@ -75,10 +78,12 @@ class multiplier_tester(dut: multiplier) extends
 		step(1)
 		expect(dut.io.answer_high , correctOutput/shifter)
 		expect(dut.io.answer_low , correctOutput%shifter)
+		
+		i = i + 1
 	}
 	
 }
-
+/*
 object multiplier_tester extends App{
 
 	def addInt( a:Int, b:Int ) : Int = {
@@ -90,10 +95,10 @@ object multiplier_tester extends App{
 	iotesters.Driver.execute(Array("--target-dir", "generated", "--generate-vcd-output", "on"), () => new multiplier()){
 		c => new multiplier_tester(c)
 	}
-}
+}*/
 
-//object multiplier_tester extends App{
-//	chisel3.iotesters.Driver(() => new multiplier()){
-//		c => new multiplier_tester(c)
-//	}
-//}
+object multiplier_tester extends App{
+	chisel3.iotesters.Driver(() => new multiplier()){
+		c => new multiplier_tester(c)
+	}
+}
