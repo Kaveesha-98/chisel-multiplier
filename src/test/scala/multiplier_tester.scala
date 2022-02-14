@@ -6,8 +6,13 @@ import chisel3.Driver
 
 class multiplier_tester(dut: multiplier) extends
 	PeekPokeTester(dut){
+<<<<<<< HEAD
 	poke(dut.io.multiplier, 16.U)
 	poke(dut.io.multiplicand, 1.U)
+=======
+	poke(dut.io.multiplier, 32.U)
+	poke(dut.io.multiplicand, 32.U)
+>>>>>>> fccde5270ddd75306459b0c78ded9467b499d1de
 	step(1)
 	println (" Result is: " + peek(dut.io.answer_low).toString )
 }
