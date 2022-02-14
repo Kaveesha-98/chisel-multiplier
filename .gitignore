@@ -12,3 +12,4 @@
 /target
 /obj_dir
 /test_benches/executables
+/generated

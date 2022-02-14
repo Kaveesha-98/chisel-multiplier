@@ -145,14 +145,14 @@ class multiplier extends Module {
     val stage4_adders_set1_Sout = stage4_adders_set1.io.Sout
     val stage4_adders_set1_Cout = stage4_adders_set1.io.Cout
     
-    stage4_adders_set2 = Module(new csa_3_input_n_bit(44))
+    val stage4_adders_set2 = Module(new csa_3_input_n_bit(44))
     
-    stage4_adders_set1.io.A := Cat(stage3_adders_Sout(1)(47, 32), stage4_adders_set1_Sout(31, 4))
-    stage4_adders_set1.io.B := Cat(0.U(15.W), stage4_adders_set1_Sout(31, 3))
-    stage4_adders_set1.io.Cin := stage3_adders_Cout(1)
+    stage4_adders_set2.io.A := Cat(stage3_adders_Sout(1)(47, 32), stage4_adders_set1_Sout(31, 4))
+    stage4_adders_set2.io.B := Cat(0.U(15.W), stage4_adders_set1_Sout(31, 3))
+    stage4_adders_set2.io.Cin := stage3_adders_Cout(1)
     
-    val stage4_adders_set2_Sout = stage3_adders_set2(i).io.Sout
-    val stage4_adders_set2_Cout = stage3_adders_set2(i).io.Cout
+    val stage4_adders_set2_Sout = stage4_adders_set2.io.Sout
+    val stage4_adders_set2_Cout = stage4_adders_set2.io.Cout
     
     val stage4_adders_Sout = Cat(stage4_adders_set2_Sout, Cat(stage4_adders_set1_Sout(3, 0), stage3_adders_Sout(0)(15, 0)))
     val stage4_adders_Cout = Cat(Cat(Cat(stage4_adders_set2_Cout(42, 0), 0.U(1.W)), Cat(stage4_adders_set1_Cout(2, 0), 0.U(1.W))), stage3_adders_Cout(0)(11, 0))
