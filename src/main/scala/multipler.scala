@@ -97,9 +97,50 @@ class multiplier extends Module {
     	stage2_adders_Cout(i) := Cat(stage2_adders_set2_Cout(i), Cat(0.U(1.W), stage2_adders_set1_Cout(i)(2, 0)))
     }
     
-    //adders for 2nd stage
+    //adders for 3rd stage
     var stage3_adders_set1 = new Array[csa_3_input_n_bit](2)
     var stage3_adders_set2 = new Array[csa_3_input_n_bit](2)
+    
+    //ouput of stage3_adders_set1
+    val stage3_adders_set1_Sout = Wire(Vec(2, UInt(32.W)))
+    val stage3_adders_set1_Cout = Wire(Vec(2, UInt(32.W)))
+    
+    //output of stage3_adders_set2
+    val stage3_adders_set2_Sout = Wire(Vec(2, UInt(35.W)))
+    val stage3_adders_set2_Cout = Wire (Vec(2, UInt(35.W)))
+    
+    //output of stage3_adders
+    val stage3_adders_Sout = Wire(Vec(2, UInt(48.W)))
+    val stage3_adders_Cout = Wire (Vec(2, UInt(44.W)))
+    
+    for(i <- 0 to 1){
+    	stage3_adders_set1(i) = Module(new csa_3_input_n_bit(32))
+    	
+    	stage3_adders_set1(i).io.A := Cat(0.U(1.W), stage2_adders_Sout(i)(38, 8))
+    	stage3_adders_set1(i).io.B := stage2_adders_Cout(i)(35, 4)
+    	stage3_adders_set1(i).io.Cin := stage2_adders_Sout(i + 1)(31, 0)
+    	
+    	stage3_adders_set1_Sout(i) := stage3_adders_set1(i).io.Sout
+    	stage3_adders_set1_Cout(i) := stage3_adders_set1(i).io.Cout
+    	
+    	stage3_adders_set2(i) = Module(new csa_3_input_n_bit(35))
+    	
+    	stage3_adders_set2(i).io.A := Cat(stage2_adders_Sout(i + 1)(38, 32), stage3_adders_set1_Sout(i)(31, 4))
+    	stage3_adders_set2(i).io.B := Cat(0.U(6.W), stage3_adders_set1_Cout(i)(31, 3))
+    	stage3_adders_set2(i).io.Cin := stage2_adders_Cout(i + 1)(34, 0)
+    	
+    	stage3_adders_set2_Sout(i) := stage3_adders_set2(i).io.Sout
+    	stage3_adders_set2_Cout(i) := stage3_adders_set2(i).io.Cout
+    	
+    	stage3_adders_Sout(i) := Cat(Cat(stage2_adders_Cout(i + 1)(35), stage3_adders_set2_Sout(i)) , Cat(stage3_adders_set1_Sout(i)(3, 0), stage2_adders_Sout(i)(7, 0)))
+    	stage3_adders_Cout(i) := Cat(Cat(Cat(stage3_adders_set2_Cout(i), 0.U(1.W)), Cat(stage3_adders_set1_Cout(i)(2, 0), 0.U(1.W))), stage2_adders_Cout(i)(3, 0))
+    }
+    
+    val stage4_adders_set1 = Module(new csa_3_input_n_bit(32))
+    
+    stage4_adders_set1.io.A := stage3_adders_Sout(0)(47, 16)
+    stage4_adders_set1.io.B := stage3_adders_Cout(0)(43, 12)
+    stage4_adders_set1.io.Cin := stage3_adders_Sout(1)(31, 0)
     
     
     
