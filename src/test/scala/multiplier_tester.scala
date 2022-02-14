@@ -6,13 +6,87 @@ import chisel3.Driver
 
 class multiplier_tester(dut: multiplier) extends
 	PeekPokeTester(dut){
-	poke(dut.io.multiplier, 32.U)
-	poke(dut.io.multiplicand, 32.U)
+	
+	def nextInputs( iteral:Int ) : String = {
+      var binaryString:String = iteral.toBinaryString
+      binaryString = binaryString.reverse.padTo(32,'0').reverse
+      var result:String = ""
+      for(i <- 0 to 31){
+      	result = result + binaryString(i) + "0"	
+      }
+      return result
+   }
+   
+   	val shifter:BigInt = BigInt(4294967296L)
+	
+	poke(dut.io.multiplier, "b11111111111111111111111111111111".U)
+	poke(dut.io.multiplicand, 2.U)
 	step(1)
-	println (" Result is: " + peek(dut.io.answer_low).toString )
+	println (" Result is: " + peek(dut.io.answer_low).toString + " " +  peek(dut.io.answer_high).toString)
+	var correctOutput:BigInt = BigInt(4294967295L)*BigInt(2)
+	var b = correctOutput/shifter
+	println(b.toString)
+	expect(dut.io.answer_high , b)
+	expect(dut.io.answer_low , correctOutput%shifter)
+	
+	var result = nextInputs(4294967295L)
+	val in1 = (("b" + result.substring(0, 31)).U).toInt
+	println(in1.toString)
+	println(result)
+	
+	var inputs:String = ""
+	var input1:Int = 4294967295L
+	var input2:Int = 4294967295L
+	
+	for (i <- 4294967290L to 4294967295L){
+		inputs = nextInputs(i)
+		input1 = (("b" + inputs.substring(0, 31)).U).toInt
+		input2 = (("b" + inputs.substring(32, 63)).U).toInt
+		correctOutput = BigInt(input1)*BigInt(input2)
+		poke(dut.io.multiplier, input1.U)
+		poke(dut.io.multiplicand, input2.U)
+		step(1)
+		expect(dut.io.answer_high , correctOutput/shifter)
+		expect(dut.io.answer_low , correctOutput%shifter)
+		
+		input1 = (("b0" + inputs.substring(0, 30)).U).toInt
+		input2 = (("b" + inputs.substring(32, 63)).U).toInt
+		correctOutput = BigInt(input1)*BigInt(input2)
+		poke(dut.io.multiplier, input1.U)
+		poke(dut.io.multiplicand, input2.U)
+		step(1)
+		expect(dut.io.answer_high , correctOutput/shifter)
+		expect(dut.io.answer_low , correctOutput%shifter)
+		
+		input1 = (("b" + inputs.substring(0, 31)).U).toInt
+		input2 = (("b" + inputs.substring(31, 62)).U).toInt
+		correctOutput = BigInt(input1)*BigInt(input2)
+		poke(dut.io.multiplier, input1.U)
+		poke(dut.io.multiplicand, input2.U)
+		step(1)
+		expect(dut.io.answer_high , correctOutput/shifter)
+		expect(dut.io.answer_low , correctOutput%shifter)
+		
+		input1 = (("b0" + inputs.substring(0, 30)).U).toInt
+		input2 = (("b" + inputs.substring(31, 62)).U).toInt
+		correctOutput = BigInt(input1)*BigInt(input2)
+		poke(dut.io.multiplier, input1.U)
+		poke(dut.io.multiplicand, input2.U)
+		step(1)
+		expect(dut.io.answer_high , correctOutput/shifter)
+		expect(dut.io.answer_low , correctOutput%shifter)
+	}
+	
 }
 
 object multiplier_tester extends App{
+
+	def addInt( a:Int, b:Int ) : Int = {
+      var sum:Int = 0
+      sum = a + b
+      return sum
+   }
+
 	iotesters.Driver.execute(Array("--target-dir", "generated", "--generate-vcd-output", "on"), () => new multiplier()){
 		c => new multiplier_tester(c)
 	}
