@@ -371,7 +371,7 @@ class multiplier extends Module {
     val answer = stage4_adders_Sout + Cat(stage4_adders_Cout, 0.U(4.W))
     
 	io.answer_high := Cat(answer_63_56, answer_55_48, answer_47_40, answer_39_32)
-    io.answer_low := Cat(answer_63_56, answer_55_48, answer_47_40, answer_39_32)
+    io.answer_low := Cat(answer_31_24, answer_23_16, answer_15_8, answer_7_0)
 }
 
 object multiplier extends App{

@@ -19,14 +19,14 @@ class multiplier_tester(dut: multiplier) extends
    
    	val shifter:BigInt = BigInt(4294967296L)
 	
-	poke(dut.io.multiplier, 1.U)
-	poke(dut.io.multiplicand, 2.U)
+	poke(dut.io.multiplier, "b11111111111111111111111111111111".U)
+	poke(dut.io.multiplicand, "b11111111111111111111111111111111".U)
 	poke(dut.io.in1, 3.U)
 	poke(dut.io.in2, 14.U)
 	step(1)
 	println("Result of out " + peek(dut.io.out).toInt.toBinaryString)
 	println (" Result is: " + peek(dut.io.answer_low).toString + " " +  peek(dut.io.answer_high).toString)
-	var correctOutput:BigInt = BigInt(4294967295L)*BigInt(2)
+	var correctOutput:BigInt = BigInt(4294967295L)*BigInt(4294967295L)
 	var b = correctOutput/shifter
 	println(b.toString)
 	expect(dut.io.answer_high , b)
