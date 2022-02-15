@@ -86,8 +86,8 @@ class multiplier_tester(dut: multiplier) extends
 	}
 	*/
 }
-/*
-object multiplier_tester extends App{
+
+object multiplier_tester_vcd extends App{
 
 	def addInt( a:Int, b:Int ) : Int = {
       var sum:Int = 0
@@ -98,7 +98,7 @@ object multiplier_tester extends App{
 	iotesters.Driver.execute(Array("--target-dir", "generated", "--generate-vcd-output", "on"), () => new multiplier()){
 		c => new multiplier_tester(c)
 	}
-}*/
+}
 
 object multiplier_tester extends App{
 	chisel3.iotesters.Driver(() => new multiplier()){

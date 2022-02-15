@@ -200,7 +200,7 @@ class multiplier extends Module {
     //all cout of adders with 1 carry in
     val cin_1 = Cat(full_adders(14).io.Cout, full_adders(12).io.Cout, full_adders(10).io.Cout, full_adders(8).io.Cout, full_adders(6).io.Cout, full_adders(4).io.Cout, full_adders(2).io.Cout, full_adders(0).io.Cout)
     
-    val cin = Array(cin_0, cin_0)
+    val cin = Array(cin_0, cin_1)
     
     val answer_7_0 = full_adders(0).io.Sout
     val answer_15_8 = Mux(cin_1(0).asBool, full_adders(2).io.Sout, full_adders(1).io.Sout)
@@ -245,6 +245,7 @@ class multiplier extends Module {
     		}else{
     			conditions_39_32(4*i + j) := ~cin(stringIteral(j-1).toString.toInt)(j)
     		}
+    		//println(conditions_39_32(4*i + j))
     	}
     	/*
     	if(stringIteral(1) == '1'){
@@ -260,6 +261,7 @@ class multiplier extends Module {
     	}
     	*/
     	conditions_39_32(4*i + 3) := cin(stringIteral(2).toString.toInt)(3)
+    	//println(stringIteral(2).toString.toInt.toString)
     	
     	product_results_39_32(i) := Cat(conditions_39_32.slice(4*i, 4*i + 4)).andR.asUInt
     	
