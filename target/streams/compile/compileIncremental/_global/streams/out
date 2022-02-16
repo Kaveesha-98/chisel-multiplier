@@ -1,6 +1,6 @@
 [0m[[0m[0mdebug[0m] [0m[0m[zinc] IncrementalCompile -----------[0m
 [0m[[0m[0mdebug[0m] [0m[0mIncrementalCompile.incrementalCompile[0m
-[0m[[0m[0mdebug[0m] [0m[0mprevious = Stamps for: 24 products, 6 sources, 4 libraries[0m
-[0m[[0m[0mdebug[0m] [0m[0mcurrent source = Set(${BASE}/src/main/scala/full_adder.scala, ${BASE}/src/main/scala/csa_3_input_32_bit.scala, ${BASE}/src/main/scala/8bit_cla.scala, ${BASE}/src/main/scala/multipler.scala, ${BASE}/src/main/scala/csa_recursive_adder_4_input.scala, ${BASE}/src/main/scala/csa_3_input_n_bit.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0mprevious = Stamps for: 28 products, 7 sources, 4 libraries[0m
+[0m[[0m[0mdebug[0m] [0m[0mcurrent source = Set(${BASE}/src/main/scala/full_adder.scala, ${BASE}/src/main/scala/multicycle_multiplier.scala, ${BASE}/src/main/scala/csa_3_input_32_bit.scala, ${BASE}/src/main/scala/8bit_cla.scala, ${BASE}/src/main/scala/multipler.scala, ${BASE}/src/main/scala/csa_recursive_adder_4_input.scala, ${BASE}/src/main/scala/csa_3_input_n_bit.scala)[0m
 [0m[[0m[0mdebug[0m] [0m[0m> initialChanges = InitialChanges(Changes(added = Set(), removed = Set(), changed = Set(), unmodified = ...),Set(),Set(),API Changes: Set())[0m
 [0m[[0m[0mdebug[0m] [0m[0mNo changes[0m
