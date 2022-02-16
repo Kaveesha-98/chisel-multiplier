@@ -10,33 +10,49 @@ class riscv_multiplier() extends Module {
     	//input - specify unsignedxunsigned-00, signedxunsigned-10, signedxsigned-11
     	val opcode = Input(UInt(2.W))
     	//outputs
-    	val answer_low = Output(UInt(8.W))
-    	val answer_high = Output(UInt(1.W))
+    	val answer_low = Output(UInt(32.W))
+    	val answer_high = Output(UInt(32.W))
     })
     
-    val A = io.A
-    val B = io.B
-    val Cin = io.Cin
+    val multiplier = Module(new multicycle_multiplier())
     
-    val P = A^B
-    val G = A&B
+    multiplier.io.multiplicand := Mux(io.opcode(0).asBool, Cat(0.U(1.W), io.rs1(30, 0)), io.rs1)
+    multiplier.io.multiplier := Mux(io.opcode(1).asBool, Cat(0.U(1.W), io.rs2(30, 0)), io.rs2)
     
-    //val C = Wire(UInt(8.W))
+    val csa_adder = Module(new csa_3_input_n_bit(33))
     
-    //carry look ahead
-    val C_1 = G(0) | (P(0) & Cin)
-    val C_2 = G(1) | (P(1) & G(0)) | (P(1,0).andR & Cin)
-    val C_3 = G(2) | (P(2) & G(1)) | (P(2,1).andR & G(0)) | (P(2,0).andR & Cin)
-    val C_4 = G(3) | (P(3) & G(2)) | (P(3,2).andR & G(1)) | (P(3,1).andR & G(0)) | (P(3,0).andR & Cin)
-    val C_5 = G(4) | (P(4) & G(3)) | (P(4,3).andR & G(2)) | (P(4,2).andR & G(1)) | (P(4,1).andR & G(0)) | (P(4,0).andR & Cin)
-    val C_6 = G(5) | (P(5) & G(4)) | (P(5,4).andR & G(3)) | (P(5,3).andR & G(2)) | (P(5,2).andR & G(1)) | (P(5,1).andR & G(0)) | (P(5,0).andR & Cin)
-    val C_7 = G(6) | (P(6) & G(5)) | (P(6,5).andR & G(4)) | (P(6,4).andR & G(3)) | (P(6,3).andR & G(2)) | (P(6,2).andR & G(1)) | (P(6,1).andR & G(0)) | (P(6,0).andR & Cin)
-    val C_8 = G(7) | (P(7) & G(6)) | (P(7,6).andR & G(5)) | (P(7,5).andR & G(4)) | (P(7,4).andR & G(3)) | (P(7,3).andR & G(2)) | (P(7,2).andR & G(1)) | (P(7,1).andR & G(0)) | (P(7,0).andR & Cin)
+    csa_adder.io.A := Cat(3.U(2.W), ~io.rs1(30, 0))
+    csa_adder.io.B := Cat(3.U(2.W), ~io.rs2(30, 0))
+    csa_adder.io.Cin := Cat(1.U(2.W), 2.U(31.W))
     
-    val C = Cat(C_7, C_6, C_5, C_4, C_3, C_2, C_1, Cin)
+    multiplier.io.signed_correct_Sout := 0.U
+    multiplier.io.signed_correct_Cout := 0.U
     
-	io.Sout := (~C)&(A^B) | C&(~(A^B))
-    io.Cout := C_8
+    switch(io.opcode){
+    	is("b10".U){
+    		multiplier.io.signed_correct_Sout := Mux(io.rs1(31).asBool, Cat(1.U(1.W), ~io.rs2), 0.U)
+    		multiplier.io.signed_correct_Cout := Mux(io.rs1(31).asBool, 1.U(33.W), 0.U)
+    	}
+    	is("b11".U){
+    		switch(Cat(io.rs1(31), io.rs2(31))){
+    			is("b10".U){
+    				multiplier.io.signed_correct_Sout := Cat(1.U(1.W), ~io.rs2)
+    				multiplier.io.signed_correct_Cout := 1.U(33.W)
+    			}
+    			is("b01".U){
+    				multiplier.io.signed_correct_Sout := Cat(1.U(1.W), ~io.rs1)
+    				multiplier.io.signed_correct_Cout := 1.U(33.W)
+    			}
+    			is("b11".U){
+    				multiplier.io.signed_correct_Sout := csa_adder.io.Sout
+    				multiplier.io.signed_correct_Cout := Cat(csa_adder.io.Cout(31, 0), 0.U(1.W))
+    			}
+    		}
+    	}
+    }
+    
+    io.answer_low := multiplier.io.answer_low
+    io.answer_high := multiplier.io.answer_high
 }
 
 object riscv_multiplier extends App{

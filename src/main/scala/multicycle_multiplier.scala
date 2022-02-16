@@ -7,23 +7,13 @@ class multicycle_multiplier extends Module {
     	//inputs
     	val multiplier = Input(UInt(32.W))
     	val multiplicand = Input(UInt(32.W))
+    	//when signed multiplication is required
+    	val signed_correct_Sout = Input(UInt(33.W))
+    	val signed_correct_Cout = Input(UInt(33.W))
     	//outputs
     	val answer_high = Output(UInt(32.W))
     	val answer_low = Output(UInt(32.W))
-    	//cheching
-    	val in1 = Input(UInt(3.W))
-    	val in2 = Input(UInt(4.W))
-    	val out = Output(UInt(7.W))
     })
-    
-    var a = new Array[chisel3.UInt](2)
-    
-    a(0) = Wire(UInt(3.W))
-    a(1) = Wire(UInt(4.W))
-    
-    a(0) := io.in1
-    a(1) := io.in2
-    io.out := Cat(a.reverse)
     
     val partial_products = Wire(Vec(32, UInt(32.W)))
 
@@ -171,11 +161,30 @@ class multicycle_multiplier extends Module {
     val stage4_adders_set2_Sout = stage4_adders_set2.io.Sout
     val stage4_adders_set2_Cout = stage4_adders_set2.io.Cout
     
+    val stage4_adders_Sout_unsigned = Reg(UInt(64.W))
+    val stage4_adders_Cout_unsigned = Reg(UInt(60.W))
+    
+    stage4_adders_Sout_unsigned := Cat(stage4_adders_set2_Sout, Cat(stage4_adders_set1_Sout(3, 0), stage3_adders_Sout(0)(15, 0)))
+    stage4_adders_Cout_unsigned := Cat(Cat(Cat(stage4_adders_set2_Cout(42, 0), 0.U(1.W)), Cat(stage4_adders_set1_Cout(2, 0), 0.U(1.W))), stage3_adders_Cout(0)(11, 0))
+    
+    //corrections for signed numbers
+    val signed_correct_adders_set1 = Module(new csa_3_input_n_bit(33))
+    
+    signed_correct_adders_set1.io.A := stage4_adders_Sout_unsigned(63, 31)
+    signed_correct_adders_set1.io.B := stage4_adders_Cout_unsigned(59, 27)
+    signed_correct_adders_set1.io.Cin := io.signed_correct_Sout
+    
+    val signed_correct_adders_set2 = Module(new csa_3_input_n_bit(33))
+    
+    signed_correct_adders_set2.io.A := signed_correct_adders_set1.io.Sout
+    signed_correct_adders_set2.io.B := Cat(signed_correct_adders_set1.io.Cout(31, 0), 0.U(1.W))
+    signed_correct_adders_set2.io.Cin := io.signed_correct_Cout
+    
     val stage4_adders_Sout = Reg(UInt(64.W))
     val stage4_adders_Cout = Reg(UInt(60.W))
     
-    stage4_adders_Sout := Cat(stage4_adders_set2_Sout, Cat(stage4_adders_set1_Sout(3, 0), stage3_adders_Sout(0)(15, 0)))
-    stage4_adders_Cout := Cat(Cat(Cat(stage4_adders_set2_Cout(42, 0), 0.U(1.W)), Cat(stage4_adders_set1_Cout(2, 0), 0.U(1.W))), stage3_adders_Cout(0)(11, 0))
+    stage4_adders_Sout := Cat(signed_correct_adders_set2.io.Sout, stage4_adders_Sout_unsigned(30, 0))
+    stage4_adders_Cout := Cat(signed_correct_adders_set2.io.Cout, 0.U(1.W), stage4_adders_Cout_unsigned(26, 0))
     
     //================================final stage full adder=====================================
     

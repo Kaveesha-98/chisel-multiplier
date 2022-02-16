@@ -4,7 +4,7 @@ import org.scalatest._
 import chisel3._
 import chisel3.Driver
 
-class multicycle_multiplier_tester(dut: multicycle_multiplier) extends
+class riscv_multiplier_tester(dut: riscv_multiplier) extends
 	PeekPokeTester(dut){
 	
 	def nextInputs( iteral:Int ) : String = {
@@ -19,8 +19,9 @@ class multicycle_multiplier_tester(dut: multicycle_multiplier) extends
    
    	val shifter:BigInt = BigInt(4294967296L)
 	
-	poke(dut.io.multiplier, "b11111111111111111111111111111111".U)
-	poke(dut.io.multiplicand, "b11111111111111111111111111111111".U)
+	poke(dut.io.rs2, "b11111111111111111111111111111111".U)
+	poke(dut.io.rs1, "b11111111111111111111111111111111".U)
+	poke(dut.io.opcode, 3.U)
 	step(1)
 	for (i <- 1 to 10){
 		println ("stet no " + i.toString + " answer_low: " + peek(dut.io.answer_low).toString + " answer_high:" +  peek(dut.io.answer_high).toString)
@@ -81,7 +82,7 @@ class multicycle_multiplier_tester(dut: multicycle_multiplier) extends
 	*/
 }
 
-object multicycle_multiplier_tester_vcd extends App{
+object riscv_multiplier_tester_vcd extends App{
 
 	def addInt( a:Int, b:Int ) : Int = {
       var sum:Int = 0
@@ -89,13 +90,13 @@ object multicycle_multiplier_tester_vcd extends App{
       return sum
    }
 
-	iotesters.Driver.execute(Array("--target-dir", "generated", "--generate-vcd-output", "on"), () => new multicycle_multiplier()){
-		c => new multicycle_multiplier_tester(c)
+	iotesters.Driver.execute(Array("--target-dir", "generated", "--generate-vcd-output", "on"), () => new riscv_multiplier()){
+		c => new riscv_multiplier_tester(c)
 	}
 }
 
-object multicycle_multiplier_tester extends App{
-	chisel3.iotesters.Driver(() => new multicycle_multiplier()){
-		c => new multicycle_multiplier_tester(c)
+object riscv_multiplier_tester extends App{
+	chisel3.iotesters.Driver(() => new riscv_multiplier()){
+		c => new riscv_multiplier_tester(c)
 	}
 }

@@ -10,20 +10,7 @@ class multiplier extends Module {
     	//outputs
     	val answer_high = Output(UInt(32.W))
     	val answer_low = Output(UInt(32.W))
-    	//cheching
-    	val in1 = Input(UInt(3.W))
-    	val in2 = Input(UInt(4.W))
-    	val out = Output(UInt(7.W))
     })
-    
-    var a = new Array[chisel3.UInt](2)
-    
-    a(0) = Wire(UInt(3.W))
-    a(1) = Wire(UInt(4.W))
-    
-    a(0) := io.in1
-    a(1) := io.in2
-    io.out := Cat(a.reverse)
     
     val partial_products = Wire(Vec(32, UInt(32.W)))
 
