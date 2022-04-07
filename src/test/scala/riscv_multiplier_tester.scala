@@ -21,7 +21,7 @@ class riscv_multiplier_tester(dut: riscv_multiplier) extends
 	
 	poke(dut.io.rs2, "b11111111111111111111111111111111".U)
 	poke(dut.io.rs1, "b11111111111111111111111111111111".U)
-	poke(dut.io.opcode, 0.U)
+	poke(dut.io.opcode, 3.U)
 	for (i <- 1 to 7){
 		step(1)
 		println ("after " + i.toString + " step(s) answer_low: " + peek(dut.io.answer_low).toString + " answer_high:" +  peek(dut.io.answer_high).toString)
