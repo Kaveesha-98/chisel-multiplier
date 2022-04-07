@@ -72,12 +72,14 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/target/scala-2.12/classes/riscv_multiplier$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	riscv_multiplier.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/target/scala-2.12/classes/riscv_multiplier.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	unsigned_divider$$anon$1.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/target/scala-2.12/classes/unsigned_divider$$anon$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	unsigned_divider$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/target/scala-2.12/classes/unsigned_divider$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	unsigned_divider$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/target/scala-2.12/classes/unsigned_divider$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	unsigned_divider.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/target/scala-2.12/classes/unsigned_divider.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	unsigned_divider_32bit$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/target/scala-2.12/classes/unsigned_divider_32bit$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	unsigned_divider_32bit.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /mnt/AE06F37906F3413F/University/Academic/Chisel/chisel-multiplier/target/scala-2.12/classes/unsigned_divider_32bit.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
