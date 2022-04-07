@@ -1,1 +1,1 @@
-["CLA_adder","cla_8bit","csa_3_input_32_bit","csa_3_input_n_bit","csa_recursive_adder_4_input","full_adder","multicycle_multiplier","multiplier","riscv_multiplier"]
+["CLA_adder","cla_8bit","csa_3_input_32_bit","csa_3_input_n_bit","csa_recursive_adder_4_input","full_adder","multicycle_multiplier","multiplier","riscv_multiplier","unsigned_divider"]
