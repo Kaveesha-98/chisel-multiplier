@@ -31,11 +31,11 @@ class unsigned_divider_32bit extends Module {
     val inWireDivisor       = Wire(UInt(35.W))
     
     inWireDivisorAddAdd := addUnsignedInts(Cat(0.U(1.W), io.divider, 0.U(1.W)), Cat(0.U(2.W), io.divider), 0.U, 34)
-    inWireDivisorSubSub := Cat(addUnsignedInts( Cat( 1.U(1.W), ~(io.divider) ), Cat( 3.U(2.W), ~(io.divider(31, 1)) ), 1.U, 33), ~(io.divider(1)) )
+    inWireDivisorSubSub := Cat(addUnsignedInts( Cat( 1.U(1.W), ~(io.divider) ), Cat( 3.U(2.W), ~(io.divider(31, 1)) ), 1.U, 33), ~(io.divider(0)) )
     inWireDivisorComp   := addUnsignedInts(0.U, Cat( 3.U(2.W), ~(io.divider) ), 1.U, 34)
     inWireDivisor       := Cat(0.U(3.W), io.divider)
 
-    val ready :: running :: Nil = Enum(2)
+    val ready :: running :: remainder_fix :: Nil = Enum(3)
     val stateReg = RegInit(ready)
     val cntReg = Reg(UInt(6.W))
 
@@ -67,7 +67,7 @@ class unsigned_divider_32bit extends Module {
         round2CarryIn := 1.U
     }
 
-    val round2ResultAdd = addUnsignedInts(remainderRound2, round2DivisorOpAdd, round2CarryIn, 35)
+    val round2ResultAdd = addUnsignedInts(remainderRound2, round2DivisorOpAdd, 0.U, 35)
     val round2ResultSub = addUnsignedInts(remainderRound2, round2DivisorOpSub, round2CarryIn, 35)
 
     val round2Result = Mux(round1Result(33).asBool, round2ResultAdd, round2ResultSub)
@@ -76,19 +76,21 @@ class unsigned_divider_32bit extends Module {
 
     val nextQuotient    = Cat(quotient(31, 0), newQuotientBits)
     val nextRemainder   = round2Result(33, 0)
-    val nextCount       = addUnsignedInts(cntReg, decrement, 0.U, 6)
+    val nextCount       = addUnsignedInts(cntReg, "b111111".U, 0.U, 6)
+
+    val fixed_reaminder = addUnsignedInts(divisor, remainder, 0.U, 34)
 
     switch(stateReg){
         is(ready){
-            remainder       := 0.U
-            quotient        := io.dividend
-            divisor         := inWireDivisor(33, 0)
-            divisorComp     := inWireDivisorComp(33, 0)
-            divisorAddAdd   := inWireDivisorAddAdd
-            divisorSubSub   := inWireDivisorSubSub
             when(io.valid){
-                stateReg := running
-                cntReg := 16.U
+                stateReg        := running
+                cntReg          := 16.U
+                remainder       := 0.U
+                quotient        := io.dividend
+                divisor         := inWireDivisor(33, 0)
+                divisorComp     := inWireDivisorComp(33, 0)
+                divisorAddAdd   := inWireDivisorAddAdd
+                divisorSubSub   := inWireDivisorSubSub
             }
         }
         is(running){
@@ -96,8 +98,12 @@ class unsigned_divider_32bit extends Module {
             quotient    := nextQuotient
             remainder   := nextRemainder
             when(cntReg === 0.U){
-                stateReg := ready
+                stateReg := remainder_fix
             }
+        }
+        is(remainder_fix){
+            remainder   := Mux(remainder(33).asBool, fixed_reaminder, remainder)
+            stateReg    := ready
         }
     }
 
