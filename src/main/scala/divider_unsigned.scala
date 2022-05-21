@@ -9,6 +9,7 @@ class unsigned_divider_32bit extends Module {
         val valid       = Input(Bool())
         val quotient    = Output(UInt(32.W))
         val remainder   = Output(UInt(32.W))
+        val ready       = Output(Bool())
     })
 
     def addUnsignedInts[T <: Data](int_a: T, int_b: T, carry_in: T, width: Int): chisel3.UInt = {
@@ -76,7 +77,7 @@ class unsigned_divider_32bit extends Module {
 
     val nextQuotient    = Cat(quotient(31, 0), newQuotientBits)
     val nextRemainder   = round2Result(33, 0)
-    val nextCount       = addUnsignedInts(cntReg, "b111111".U, 0.U, 6)
+    val nextCount       = addUnsignedInts(cntReg, "b111111".U, 0.U, 6)//decremented counter
 
     val fixed_reaminder = addUnsignedInts(divisor, remainder, 0.U, 34)
 
@@ -102,6 +103,7 @@ class unsigned_divider_32bit extends Module {
             }
         }
         is(remainder_fix){
+            //last step in non restore division require adding divisor if remainder negative
             remainder   := Mux(remainder(33).asBool, fixed_reaminder, remainder)
             stateReg    := ready
         }
@@ -109,6 +111,7 @@ class unsigned_divider_32bit extends Module {
 
     io.quotient     := quotient(31, 0)
     io.remainder    := remainder(31, 0)
+    io.ready        := stateReg === ready
 }
 
 object unsigned_divider extends App{
